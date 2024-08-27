@@ -1,0 +1,14 @@
+.user-data-wrap {
+    .user-listing {
+        display: flex;
+        margin: 0 -7px;
+        row-gap: 14px;
+        flex-wrap: wrap;
+
+        li {
+            width: 25%;
+            padding: 0 7px;
+            box-sizing: border-box;
+        }
+    }
+}
