@@ -1,14 +1,103 @@
-.user-data-wrap {
-    .user-listing {
-        display: flex;
-        margin: 0 -7px;
-        row-gap: 14px;
-        flex-wrap: wrap;
+.user-data-listing {
+    background-color: #161D27;
 
-        li {
-            width: 25%;
-            padding: 0 7px;
-            box-sizing: border-box;
+    .user-data-wrap {
+        position: relative;
+
+        .user-data {
+            .user-listing {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 28px;
+                margin: 0;
+
+                li {
+                    width: calc(33.33% - 28px);
+                    padding: 30px;
+                    box-sizing: border-box;
+                    background-color: #1F2732;
+                    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+                    .listing-wrap {
+                        padding-bottom: 25px;
+                        border-bottom: 1px solid #3A4553;
+
+                        h2 {
+                            margin: 0;
+                            color: #FFFFFF;
+                            padding-bottom: 8px;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+
+                        .phone-call,
+                        .email-call {
+                            display: flex;
+                            gap: 12px;
+                            align-items: center;
+
+                            .call-img,
+                            .email-img {
+                                border-radius: 100%;
+                                border: 2px solid #CCAA60;
+                                width: 40px;
+                                height: 40px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: #d7d7d7;
+                                font-family: Outfit;
+                                font-size: 18px;
+                                font-weight: 400;
+                                line-height: 28px;
+
+                                &:hover {
+                                    color: #CCAA60;
+                                }
+                            }
+                        }
+                    }
+
+                    .learn-more {
+                        padding-top: 25px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 100%;
+                        }
+
+                        .cta-btn {
+                            a {
+                                display: block;
+                                text-decoration: none;
+                                font-family: 'Outfit', sans-serif;
+                                font-size: 18px;
+                                font-weight: 500;
+                                line-height: 25px;
+                                text-align: left;
+                                color: #fff;
+                                padding: 12px 30px;
+                                background-color: #161D27;
+
+                                &:hover {
+                                    background-color: #D1B06B;
+                                    color: #161D27;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

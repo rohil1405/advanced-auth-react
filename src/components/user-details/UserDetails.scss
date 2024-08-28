@@ -1,0 +1,76 @@
+.user-details {
+    background-color: #161D27;
+    height: 100vh;
+
+    .user-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .user-image {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            img {
+                border-radius: 100%;
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+            }
+        }
+
+        .user-info {
+            .tabs {
+                display: flex;
+                margin-bottom: 20px;
+                gap: 12px;
+
+                a {
+                    padding: 15px 38px;
+                    border: none;
+                    background-color: #f0f0f0;
+                    cursor: pointer;
+                    font-family: Outfit;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    transition: background-color 0.3s ease;
+                    color: #fff;
+                    background-color: #1F2732;
+
+                    &:hover {
+                        color: rgba(22, 29, 39, 1);
+                        background-color: rgba(209, 176, 107, 0.6);
+                    }
+
+                    &.active {
+                        color: #161D27;
+                        background-color: #D1B06B;
+                    }
+                }
+            }
+
+            .tab-content {
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+                h2 {
+                    margin-bottom: 15px;
+                }
+
+                p {
+                    margin: 5px 0;
+
+                    strong {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
