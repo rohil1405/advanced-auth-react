@@ -5,6 +5,8 @@ import { UserData } from "../user-data/UserData";
 import Menu from "../Menu/Menu";
 import call from "../../assets/call.png";
 import email from "../../assets/email.png";
+import loader from "../../assets/loading.png";
+import "../user-data/loader.scss";
 
 const fetchUsers = async (): Promise<UserData[]> => {
   const url = "https://dummyjson.com/users";
@@ -31,6 +33,16 @@ const UserList: React.FC = () => {
       user.firstName.toLowerCase().includes(search.toLowerCase()) ||
       user.lastName.toLowerCase().includes(search.toLowerCase())
   );
+
+  if (!filteredUsers)
+    return (
+      <div className="loader-container">
+        <div className="loader">
+          <img src={loader} alt="Loading..." />
+          <span>Loading...</span>
+        </div>
+      </div>
+    );
 
   return (
     <div className="user-data-listing">

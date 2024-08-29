@@ -1,5 +1,7 @@
 .user-data-listing {
     background-color: #161D27;
+    min-height: 100vh;
+    height: 100%;
 
     .user-data-wrap {
         position: relative;
@@ -19,13 +21,16 @@
                     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 
                     .listing-wrap {
-                        padding-bottom: 25px;
+                        padding-bottom: 20px;
                         border-bottom: 1px solid #3A4553;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
 
                         h2 {
                             margin: 0;
                             color: #FFFFFF;
-                            padding-bottom: 8px;
+                            width: 100%;
                         }
 
                         p {
@@ -35,15 +40,15 @@
                         .phone-call,
                         .email-call {
                             display: flex;
-                            gap: 12px;
+                            gap: 10px;
                             align-items: center;
 
                             .call-img,
                             .email-img {
                                 border-radius: 100%;
                                 border: 2px solid #CCAA60;
-                                width: 40px;
-                                height: 40px;
+                                width: 35px;
+                                height: 35px;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
@@ -65,7 +70,7 @@
                     }
 
                     .learn-more {
-                        padding-top: 25px;
+                        padding-top: 20px;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;

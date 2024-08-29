@@ -1,5 +1,5 @@
 import React from 'react';
-import icon from '../../assets/header-icon.png';
+import icon from '../../assets/logo.png';
 import './Menu.scss';
 
 const Menu = () => {

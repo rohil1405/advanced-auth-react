@@ -1,16 +1,16 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import UserList from "./components/user-listing/UserList";
-import UserDetailsPage from "./components/user-details/UserDetails";
+import UserDetails from "./components/user-details/UserDetails";
 
 const routes = [
   {
-    path: "/user",
+    path: "/",
     element: <UserList/>,
   },
   {
     path: "/user/:id",
-    element: <UserDetailsPage/>,
+    element: <UserDetails />,
   },
 ];
 

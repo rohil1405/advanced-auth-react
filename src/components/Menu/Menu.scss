@@ -3,7 +3,7 @@
     top: 0;
     left: 0px;
     height: 100%;
-    background-color: #D1B06B;
+    background-color: #1F2732;
     width: 200px;
     z-index: 1000;
 
@@ -14,8 +14,11 @@
         height: 100%;
         position: absolute;
         bottom: 0%;
+        padding: 0 25px;
 
         .menu-top {
+            padding-top: 25px;
+
             img {
                 width: 150px;
                 height: auto;
@@ -23,22 +26,24 @@
         }
 
         .menu-bottom {
+            padding-bottom: 25px;
+
             a {
-                font-family: outfit;
-                text-decoration: none;
-                color: #ffffff;
-                font-weight: 500;
+                padding: 15px 34px;
+                color: #1F2732;
+                background-color: #D1B06B;
+                font-family: Outfit;
                 font-size: 20px;
-                padding: 15px 38px;
-                background: #161D27;
+                font-weight: 500;
+                line-height: 28px;
                 display: inline-block;
-                text-align: center;
                 border: 2px solid transparent;
+                text-decoration: none;
 
                 &:hover {
-                    border: 2px solid #161D27;
-                    color: #161D27;
-                    background-color: #fff;
+                    color: #D1B06B;
+                    background-color: transparent;
+                    border: 2px solid #D1B06B;
                 }
             }
         }
