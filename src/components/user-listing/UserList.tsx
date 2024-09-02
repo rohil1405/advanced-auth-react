@@ -87,7 +87,7 @@ const UserList: React.FC = () => {
                         />
                       </div>
                       <div className="cta-btn">
-                        <Link to={`/user/${user.id}`}>Learn More</Link>
+                        <Link to={`/${user.id}`}>Learn More</Link>
                       </div>
                     </div>
                   </li>

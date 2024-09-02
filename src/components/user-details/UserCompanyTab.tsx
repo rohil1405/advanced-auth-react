@@ -43,7 +43,7 @@ const UserCompanyTab: React.FC<UserCompanyTabProps> = ({ user }) => {
         altText="role-image"
         label="IP Address: "
         value={user.ip}
-      />
+      /> 
       <Details
         imageSrc={mac}
         altText="mac-image"
