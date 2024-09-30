@@ -6,7 +6,7 @@
     min-height: 100vh;
     flex-wrap: wrap;
     gap: 20px;
-    background-color: #1F2732;
+    background-color: #161D27;
 
     .form {
         .logos {
@@ -24,7 +24,11 @@
         }
 
         .login-wrap,
-        .register-wrap {
+        .register-wrap,
+        .forgot-wrap,
+        .reset-wrap,
+        .modal-overlay,
+        .modal-content {
             margin: 0 auto;
             width: 500px;
             background-color: transparent;
@@ -32,7 +36,7 @@
             border-radius: 12px;
             padding: 30px 40px;
             backdrop-filter: blur(20px);
-            background-color: #161D27;
+            background-color: #1F2732;
             box-shadow: 0 0 10px rgba(0, 0, 0, .2);
             position: relative;
 
@@ -73,7 +77,7 @@
                 }
 
                 .datepicker {
-                    width: 142%;
+                    width: 136%;
                     height: 52px;
                     background: transparent;
                     border: none;
@@ -148,7 +152,7 @@
 
                     input {
                         position: relative;
-                        width: 90%;
+                        width: 100%;
                         height: 100%;
                         background: transparent;
                         border: none;
@@ -180,21 +184,115 @@
 
                 }
 
+                .main-wrap {
+                    position: absolute;
+                    right: 5%;
+                    width: 22px;
+                }
+
+                .main-wrap.name {
+                    top: 13%;
+                }
+
+                .main-wrap.email {
+                    top: 24.5%;
+                }
+
+                .main-wrap.pass {
+                    top: 35%;
+                }
+
+                .main-wrap.cpass {
+                    top: 46.5%;
+                }
+
+                .main-wrap.date {
+                    width: 33px;
+                    right: 3%;
+                    top: 57%;
+                }
+
+                .main-wrap.phone {
+                    top: 77.5%;
+                }
+
+                .admin-icon,
+                .add-product {
+                    position: absolute;
+                    right: 5%;
+                    width: 22px;
+                }
+
+                .add-product.id {
+                    top: 12.5%;
+                }
+
+                .add-product.title {
+                    top: 23.5%;
+                }
+
+                .add-product.description {
+                    top: 34%;
+                }
+
+                .add-product.price {
+                    top: 44.5%;
+                }
+
+                .add-product.category {
+                    top: 55%;
+                }
+
+                .add-product.rating {
+                    top: 65.5%;
+                }
+
+                .add-product.count {
+                    top: 76%;
+                }
+
+                .admin-icon.name {
+                    top: 14%;
+                    width: 27px;
+                }
+
+                .admin-icon.email {
+                    top: 26%;
+                }
+
+                .admin-icon.pass {
+                    top: 38%;
+                }
+
+                .admin-icon.cpass {
+                    top: 50%;
+                }
+
+                .admin-icon.date {
+                    top: 61.5%;
+                    width: 30px;
+                    right: 3%;
+                }
+
+                .admin-icon.phone {
+                    top: 83%;
+                }
+
                 .login-img,
                 .register-img {
                     position: absolute;
                     padding-left: 7px;
                     right: 5%;
-                    width: 20px;
+                    width: 30px;
                     height: auto;
                 }
 
                 .login-img.email {
-                    top: 50%;
+                    top: 49.5%;
                 }
 
                 .login-img.pass {
-                    top: 63.5%;
+                    top: 62.5%;
                     cursor: pointer;
                 }
 
@@ -220,26 +318,51 @@
                     top: 49%;
                 }
 
+                .register-img.reset-cpass {
+                    top: 73%;
+                }
+
+                .login-img.reset-pass {
+                    top: 53%;
+                }
+
+                .login-img.reset-email {
+                    top: 34%;
+                }
+
                 .register-img.calender {
                     width: 30px;
                     height: auto;
                     top: 59.5%;
                 }
 
+                .login-img.f-email {
+                    top: 55%;
+                }
+
+
+
                 .forgot-pass {
                     text-align: right;
-                    margin-bottom: 14px;
-                    cursor: pointer;
-                    font-family: Outfit;
-                    font-size: 18px;
-                    font-weight: 400;
-                    line-height: 32px;
-                    color: rgba(255, 255, 255, 0.5);
+                    padding-bottom: 14px;
 
-                    &:hover {
-                        color: rgba(209, 176, 107, 0.7);
+                    a {
+                        margin-bottom: 14px;
+                        cursor: pointer;
+                        font-family: Outfit;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 32px;
+                        color: rgba(255, 255, 255, 0.5);
+                        text-decoration: none;
+
+                        te &:hover {
+                            color: rgba(209, 176, 107, 0.7);
+                        }
                     }
                 }
+
+
 
                 .cta-btn {
                     button {
@@ -303,7 +426,33 @@
                     }
                 }
 
+                .file-choose {
+                    display: flex;
+                    justify-content: center;
+                    margin: 0 auto;
+                    padding: 0 0 28px;
+                    color: #D1B06B;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 35px;
+                }
 
+                input[type="file"]::file-selector-button {
+                    border: 2px solid transparent;
+                    padding: 0.5em 1em;
+                    border-radius: 10px;
+                    margin-right: 15px;
+                    background-color: #D1B06B;
+                    transition: all 0.3s ease-in-out;
+                    color: #1F2732;
+                    font-size: 16px;
+                }
+
+                input[type="file"]::file-selector-button:hover {
+                    background-color: transparent;
+                    color: #D1B06B;
+                    border: 2px solid #D1B06B;
+                }
             }
         }
     }

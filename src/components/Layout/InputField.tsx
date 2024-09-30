@@ -5,6 +5,7 @@ type InputProps = {
   value: string;
   placeholder?: string;
   onChange: (e: any) => void;
+  disabled?: boolean;
 };
 
 const InputField: React.FC<InputProps> = ({  type, value, placeholder, onChange }) => {

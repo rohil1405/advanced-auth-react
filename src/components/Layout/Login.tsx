@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../../store/authSlice";
 import InputField from "./InputField";
 import "./layout.scss";
 import visible from "../../assets/visible.png";
@@ -8,14 +10,65 @@ import invisible from "../../assets/invisible.png";
 import logo from "../../assets/logo.png";
 import icon from "../../assets/icon.png";
 import login from "../../assets/login.png";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../utils/Firebase";
+import Swal from "sweetalert2";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleTogglePassword = () => {
     setShowPassword((prev) => !prev);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (email === "admin@gmail.com" && password === "admin") {
+      Swal.fire({
+        title: "Login Successful",
+        text: "Welcome to the Admin Dashboard!",
+        icon: "success",
+        background: "#1F2732",
+      }).then(() => {
+        dispatch(loginUser({ email, role: "admin" }));
+        navigate("/admin");
+      });
+      return;
+    }
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      const token = await user.getIdToken();
+      dispatch(loginUser({ email, token }));
+
+      Swal.fire({
+        title: "Login Successful",
+        text: "You have logged in successfully!",
+        icon: "success",
+        background: "#1F2732",
+      }).then(() => {
+        navigate("/product");
+      });
+    } catch (error: any) {
+      Swal.fire({
+        title: "Error!",
+        text: "Invalid credentials. Please try again.",
+        icon: "error",
+        background: "#1F2732",
+      });
+      console.error("Error logging in:", error.message);
+    }
   };
 
   return (
@@ -23,19 +76,19 @@ const Login: React.FC = () => {
       <div className="form">
         <div className="logos">
           <img src={icon} alt="logo-one" />
-          <img src={logo} alt="main-logo" className='main-logo'/>
+          <img src={logo} alt="main-logo" className="main-logo" />
           <img src={icon} alt="logo-two" />
         </div>
         <div className="login-wrap">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1>Login</h1>
             <div className="login-user-wrap">
               <div className="login-user">
-                <img src={login} alt='login-user' />
+                <img src={login} alt="login-user" />
               </div>
             </div>
             <div className="section-logo">
-                <img src={icon} alt="icon" />
+              <img src={icon} alt="icon" />
             </div>
             <InputField
               type="email"
@@ -58,14 +111,18 @@ const Login: React.FC = () => {
               onClick={handleTogglePassword}
             />
 
-            <div className="forgot-pass">Forgot Password</div>
+            <div className="forgot-pass">
+              <Link to="/reset" className="re-direct">
+                Forgot Password
+              </Link>
+            </div>
 
             <div className="cta-btn">
               <button type="submit">Submit</button>
             </div>
 
             <div className="register-link">
-              <p>Don`t have an account? </p>
+              <p>Don’t have an account? </p>
               <Link to="/register" className="re-direct">
                 Register
               </Link>

@@ -18,10 +18,39 @@
 
         .menu-top {
             padding-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 30px;
+            padding-top: 10px;
 
             img {
                 width: 150px;
                 height: auto;
+            }
+
+            .menu-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                justify-content: center;
+                text-align: center;
+                padding-top: 40px;
+
+                a {
+                    font-family: outfit;
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 30px;
+                    letter-spacing: 0.05em;
+                    color: #ffffff;
+                    margin: 0;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #D1B06B;
+                    }
+                }
             }
         }
 
